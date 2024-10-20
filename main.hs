@@ -1,4 +1,3 @@
-
 import Data.List
 
 
@@ -47,9 +46,11 @@ b = 1 : [2,3]
 -- utility functions
 -- (import Data.List required)
 one = head [1,2,3]
-three  = tail [1,2,3]
+three = last [1,2,3]
+twoAndThree  = tail [1,2,3]
+oneAndTwo = init [1,2,3]
 two = length [1,2]
-is_empty = null [1,2]
+isEmpty = null [1,2]
 
 -- "iter map"... Kind of
 --   VVVVVV Map   VVVVVV list       VVV filter conidtion
