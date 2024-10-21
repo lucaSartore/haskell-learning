@@ -134,6 +134,14 @@ p2 = print $ summOne $ summOne $ summOne [1,2,3,4]
 
 ## type definition
 ```haskell
+-- unamed type
 data List e = 
     Null | Node e (List e) 
+
+-- named type (record)
+data Person = Person {name :: String, age:: Int} 
+
+-- functions to get parameters are automatically defined
+person = Person "jonny" 25
+jonny = name person
 ```
