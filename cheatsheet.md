@@ -117,7 +117,14 @@ filter (\x -> even x) [1,2,3,4]
 
 
 
-
+## dot operator
+```haskell
+-- these 3 definitions are equivalent
+map2d :: (a->b) -> [[a]] -> [[b]]
+map2d = map . map
+map2d2 = \f -> map (map f)
+map2d3 = \f x -> map (map f) x
+```
 
 
 

@@ -78,10 +78,9 @@ tuplefunc (False, False) = "they are bouth false"
 tuplefunc (False, True) = "only second one is true"
 
 
-
-
 lambda = (\x y -> x + y)
 
+map2d = (map . map) (+1) [[1]]
 
 
 
