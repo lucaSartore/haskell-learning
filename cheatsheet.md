@@ -102,8 +102,17 @@ tuplefunc (False, True) = "only second one is true"
 
 ```
 
-exercises
+## higher order functions
+```haskell
 
+-- lambda functions:
+lambda = (\x y -> x + y)
+
+-- std higher order functions
+map (\x -> x+1) [1,2,3,4]
+filter (\x -> even x) [1,2,3,4]
+
+```
 
 
 

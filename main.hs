@@ -80,8 +80,7 @@ tuplefunc (False, True) = "only second one is true"
 
 
 
-
-
+lambda = (\x y -> x + y)
 
 
 
