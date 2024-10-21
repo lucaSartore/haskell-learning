@@ -83,5 +83,10 @@ lambda = (\x y -> x + y)
 map2d = (map . map) (+1) [[1]]
 
 
+summOne = map (1+)
+p1 = print ( summOne (summOne (summOne [1,2,3,4])))
+p2 = print $ summOne $ summOne $ summOne [1,2,3,4]
 
 
+data List e = 
+    Null | Node e (List e) 

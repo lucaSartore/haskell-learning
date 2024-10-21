@@ -117,14 +117,23 @@ filter (\x -> even x) [1,2,3,4]
 
 
 
-## dot operator
+## function operators
 ```haskell
 -- these 3 definitions are equivalent
 map2d :: (a->b) -> [[a]] -> [[b]]
 map2d = map . map
 map2d2 = \f -> map (map f)
 map2d3 = \f x -> map (map f) x
+
+
+-- $ operator to clean code from parenthesis
+summOne = map (1+)
+p1 = print ( summOne (summOne (summOne [1,2,3,4])))
+p2 = print $ summOne $ summOne $ summOne [1,2,3,4]
 ```
 
-
-
+## type definition
+```haskell
+data List e = 
+    Null | Node e (List e) 
+```
