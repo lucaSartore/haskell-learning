@@ -168,3 +168,13 @@ data Color = HSV Int Int Int | RGB Int Int Int
 sumAndPrint :: (Num a, MyShow a) => a -> a -> IO()
 sumAndPrint a b = print $ a + b
 ```
+
+## IO operations
+```haskell
+main =
+    do
+        putStrLn "Insert a value"
+        value <- getLine
+        let toPrint = "Here is your value: " ++ value
+        putStrLn toPrint
+```
