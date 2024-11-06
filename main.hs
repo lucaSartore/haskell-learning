@@ -1,4 +1,5 @@
 import Data.List
+import Prelude
 
 
 main = putStrLn "hello world"
@@ -97,3 +98,37 @@ data Person = Person {name :: String, age:: Int}
 -- functions to get parameters are automatically defined
 person = Person "jonny" 25
 jonny = name person
+
+
+-- infinite list
+fibs :: [Int]
+fibs = 0 : 1 : zipWith (+) fibs (tail fibs)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
