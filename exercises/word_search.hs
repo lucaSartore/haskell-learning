@@ -12,11 +12,14 @@
 -- getLine :: IO String
 import System.IO
 
--- note use at the beginning hSetBiffer
-
-main :: IO ()
-main = do
-    -- no buffering of stdout (so that i don't need to flush the buffer)
-    hSetBuffering stdout NoBuffering
-
-    print "hello word"
+-- main :: IO ()
+main = print "hello" >> (print "word" >> print "end")
+-- main = do
+--     -- no buffering of stdout (so that i don't need to flush the buffer)
+--     hSetBuffering stdout NoBuffering
+--
+--     do
+--         print "insert some stuff"
+--         word <- getLine
+--         word2 <- getLine
+--         print word
