@@ -1,5 +1,3 @@
-import System.Random
-
 data  Tree a = Tree {left :: Tree a, right :: Tree a, value :: a} | None 
     deriving Show
 
@@ -22,24 +20,32 @@ inorder2 t = aux t []
         aux None v = v
         aux Tree{left,right,value} v = aux left $ value:aux right v
 
+quickCheck :: (Ord a) => [a] -> Bool
+quickCheck [] = True
+quickCheck [_] = True
+quickCheck [a,b] = a <= b
+quickCheck (a:b:xs) = a <= b && quickCheck (b:xs)
 
-
-rand :: [Int]
-rand = do
-    x <- randomIO :: IO Int
-    x:rand
--- rand = 1:rand
-main = print $ take 10 rand
-
-mains = do
+main = do
     let tree = None
     -- random <- randomIO :: IO Int
 
     tree <- pure $ insert tree 1
-    -- tree <- pure $ insert tree 4
-    -- tree <- pure $ insert tree 1
-    -- tree <- pure $ insert tree 8
-    -- tree <- pure $ insert tree 3
-    -- tree <- pure $ insert tree 2
-    -- print $ inorder tree
-    print $ inorder tree
+    tree <- pure $ insert tree 4
+    tree <- pure $ insert tree 1
+    tree <- pure $ insert tree 8
+    tree <- pure $ insert tree 3
+    tree <- pure $ insert tree 2
+
+    let list = inorder tree
+    print list
+
+
+    print $ quickCheck list
+
+    list <- pure $ 10:list
+
+    print list
+    print $ quickCheck list
+
+    

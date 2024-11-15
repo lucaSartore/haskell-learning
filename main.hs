@@ -93,7 +93,7 @@ data List e =
     Null | Node e (List e) 
 
 
-data Person = Person {name :: String, age:: Int} 
+data Tree = Person {name :: String, age:: Int} 
 
 -- functions to get parameters are automatically defined
 person = Person "jonny" 25
