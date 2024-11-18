@@ -12,14 +12,24 @@
 -- getLine :: IO String
 import System.IO
 
--- main :: IO ()
-main = print "hello" >> (print "word" >> print "end")
--- main = do
---     -- no buffering of stdout (so that i don't need to flush the buffer)
---     hSetBuffering stdout NoBuffering
---
---     do
---         print "insert some stuff"
---         word <- getLine
---         word2 <- getLine
---         print word
+
+getSearchWords :: IO [String]
+getSearchWords = do
+    putStrLn "insert the workds you want to search for: "
+    aux
+    where
+        aux :: IO [String]
+        aux = do
+            putStr "> "
+            word <- getLine
+            if word == "" then
+                return []
+            else do
+                v <- aux
+                return $ word:v
+
+main :: IO ()
+main = do
+    words <- getSearchWords
+    print words
+
