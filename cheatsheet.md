@@ -178,3 +178,22 @@ main =
         let toPrint = "Here is your value: " ++ value
         putStrLn toPrint
 ```
+
+## type, newtime and data
+
+you already know how `data` works
+
+the `type` can create a type alias:
+
+```haskell
+type UserId = Int
+```
+Note that this is not "strictly" typed checked (an Int can be automatically casted to UserId).
+
+instead the `newtype` keyword has strict type checking
+```haskell
+newtype UserId = Int
+```
+at run time type and new-time are the same, the difference is only at compile time.
+
+
