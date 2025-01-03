@@ -197,3 +197,28 @@ newtype UserId = Int
 at run time type and new-time are the same, the difference is only at compile time.
 
 
+## Either
+``` haskell
+-- how to import
+import Data.Either
+
+-- how is defined
+data Either a b = Left a | Rigth b
+
+-- some functions
+lefts :: [Either a b] -> [a]
+rights :: [Either a b] -> [b]
+
+isLeft :: Either a b -> Bool
+isRight :: Either a b -> Bool
+
+
+fromLeft :: a -> Either a b -> a
+fromRight:: b -> Either a b -> b
+--         ^^^ default parameter (aka unwrap or)
+
+either :: (a -> c) -> (b -> c) -> Either a b -> c
+--          ^^^ function to apply in the case of a
+--                      ^^^ function to apply in the case of b
+
+```
